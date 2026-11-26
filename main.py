@@ -23,6 +23,9 @@ def main() -> None:
     path = os.path.join(out_dir, "entry.txt")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(EXCUSE + "\n")
+    with open(path, encoding="utf-8", newline="\n") as f:
+        written = f.read()
+    assert written == EXCUSE + "\n", "written entry does not match the approved line"
 
 
 if __name__ == "__main__":
